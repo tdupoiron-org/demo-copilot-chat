@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo App</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to the Todo App</h1>
+		<p>This is a simple todo app built with ExpressJS and MongoDB.</p>
+		<form action="/todo" method="POST">
+			<input type="text" name="task" placeholder="Enter a task">
+			<button type="submit">Add Task</button>
+		</form>
+		<ul>
+			<% todos.forEach(function(todo) { %>
+				<li><%= todo.task %> <a href="/todo/<%= todo._id %>/delete">Delete</a></li>
+			<% }); %>
+		</ul>
+	</div>
+</body>
+</html>
